@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    text-align: center;
+    background-color: gray;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .calculator {
+        // width: 240px;
+        // height: 400px;
+        background-color: white;
+        .keypad {
+            display: grid;
+            grid-template-columns: repeat(4, 50px);
+            grid-template-rows: repeat(5, 50px);
+            grid-template-areas:
+                "clear clear divide multiply"
+                "seven eight nine subtract"
+                "four five six add"
+                "one two three equals"
+                "zero zero decimal equals";
+            gap: 1px;
+        }
+        button {
+            position: relative;
+            // color: white;
+            outline: 1px solid black;
+            border: none;
+            background: white;
+            font-family: monospace;
+            font-size: 20px;
+            cursor: default;
+            &:hover {
+                color: black;
+                outline: 0.05em solid grey;
+                z-index: 3;
+            }
+        }
+    }
+}
