@@ -1,25 +1,44 @@
+@import url("http://fonts.cdnfonts.com/css/digital-7-mono");
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
 .App {
+    font-family: monospace;
     text-align: center;
-    background-color: gray;
+    background-color: rgb(155, 220, 255);
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     .calculator {
-        // width: 240px;
-        // height: 400px;
-        background-color: white;
+        border: 5px solid black;
+        background-color: black;
+
+        .displayScreen {
+            font-size: 29px;
+            font-family: "Digital-7 Mono", monospace;
+            color: white;
+            text-align: right;
+            line-height: 35px;
+        }
+        .formularScreen {
+            min-height: 20px;
+            font-family: "Digital-7 Mono", monospace;
+            font-size: 20px;
+            color: orange;
+            text-align: right;
+            vertical-align: text-top;
+            line-height: 20px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
         .keypad {
             display: grid;
-            grid-template-columns: repeat(4, 50px);
-            grid-template-rows: repeat(5, 50px);
+            grid-template-columns: repeat(4, 80px);
+            grid-template-rows: repeat(5, 65px);
             grid-template-areas:
                 "clear clear divide multiply"
                 "seven eight nine subtract"
@@ -30,10 +49,10 @@
         }
         button {
             position: relative;
-            // color: white;
             outline: 1px solid black;
             border: none;
-            background: white;
+            color: white;
+            background-color: grey;
             font-family: monospace;
             font-size: 20px;
             cursor: default;
@@ -42,6 +61,18 @@
                 outline: 0.05em solid grey;
                 z-index: 3;
             }
+        }
+        .num {
+            background-color: #4d4d4d;
+        }
+        .oper {
+            background-color: #666666;
+        }
+        .equal {
+            background-color: #046;
+        }
+        .clear {
+            background-color: #ac3939;
         }
     }
 }
