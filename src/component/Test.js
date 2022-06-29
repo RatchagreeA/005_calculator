@@ -17,4 +17,4 @@ const btn = [
     { id: "decimal", val: "." },
     { id: "clear", val: "AC" },
 ];
-console.log(btn.length);
+console.log("0" + "0");
