@@ -16,6 +16,7 @@
     .calculator {
         border: 5px solid black;
         background-color: black;
+        width: 333px;
 
         .displayScreen {
             min-height: 35px;
@@ -25,7 +26,7 @@
             text-align: right;
             line-height: 35px;
         }
-        .formularScreen {
+        .formulaScreen {
             min-height: 20px;
             font-family: "Digital-7 Mono", monospace;
             font-size: 20px;
@@ -59,8 +60,8 @@
             cursor: default;
             &:hover {
                 color: black;
-                outline: 0.05em solid grey;
-                z-index: 3;
+                outline: 1px solid grey;
+                z-index: 99;
             }
         }
         .num {
