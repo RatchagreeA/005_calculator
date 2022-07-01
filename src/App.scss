@@ -1,11 +1,13 @@
 @import url("http://fonts.cdnfonts.com/css/digital-7-mono");
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 .App {
-    font-family: monospace;
+    font-family: "Dosis", monospace;
     text-align: center;
     width: 100vw;
     height: 100vh;
@@ -19,8 +21,8 @@
 
         .displayScreen {
             min-height: 35px;
-            font-size: 29px;
-            font-family: "Digital-7 Mono", monospace;
+            font-size: 27px;
+            font-family: "Digital-7 Mono", "Dosis", monospace;
             color: white;
             text-align: right;
             line-height: 35px;
@@ -29,7 +31,7 @@
         }
         .formulaScreen {
             min-height: 20px;
-            font-family: "Digital-7 Mono", monospace;
+            font-family: "Digital-7 Mono", "Dosis", monospace;
             font-size: 20px;
             color: orange;
             text-align: right;
@@ -57,7 +59,7 @@
             outline: 1px solid rgba(255, 255, 255, 0.75);
             border: none;
             color: white;
-            font-family: monospace;
+            font-family: "Dosis", monospace;
             font-size: 20px;
 
             cursor: default;
