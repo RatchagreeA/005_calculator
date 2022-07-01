@@ -1,7 +1,18 @@
 import "./App.scss";
 import { useState } from "react";
+import FormulaScreen from "./component/FormulaScreen";
+import Display from "./component/Display";
+import KeyPad from "./component/KeyPad";
 
 function App() {
+    const isOperator = /[*/+-]/;
+    const isNumbers = /[0-9]/;
+    const isClear = /AC/;
+    const isDeci = /\./;
+    const isEvaluated = /=/;
+    const endsWithOperator = /[*+-/]$/;
+    const endsWithNegativeSign = /\d[*/+-]{1}-$/;
+
     const [formula, setFormula] = useState("");
     const [curVal, setCurVal] = useState("0");
     const [prevVal, setPrevVal] = useState("");
@@ -123,8 +134,6 @@ function App() {
                 clear();
             } else if (isEvaluated.test(val)) {
                 evaluated();
-            } else {
-                //pass
             }
         }
     };
@@ -140,58 +149,3 @@ function App() {
 }
 
 export default App;
-
-function FormulaScreen({ formula }) {
-    return <div className="formulaScreen">{formula}</div>;
-}
-function Display({ curVal }) {
-    return (
-        <div id="display" className="displayScreen">
-            {curVal}
-        </div>
-    );
-}
-function KeyPad({ handleOnClick }) {
-    return (
-        <div className="keypad">
-            {btns.map((btn) => (
-                <button
-                    id={btn.id}
-                    className={btn.class}
-                    value={btn.val}
-                    style={{ gridArea: btn.id }}
-                    onClick={handleOnClick}
-                >
-                    {btn.val}
-                </button>
-            ))}
-        </div>
-    );
-}
-const isOperator = /[\*/+-]/;
-const isNumbers = /[0-9]/;
-const isClear = /AC/;
-const isDeci = /\./;
-const isEvaluated = /\=/;
-const endsWithOperator = /[\*+-/]$/;
-const endsWithNegativeSign = /\d[\*/+-]{1}-$/;
-
-const btns = [
-    { id: "zero", val: "0", class: "num" },
-    { id: "one", val: "1", class: "num" },
-    { id: "two", val: "2", class: "num" },
-    { id: "three", val: "3", class: "num" },
-    { id: "four", val: "4", class: "num" },
-    { id: "five", val: "5", class: "num" },
-    { id: "six", val: "6", class: "num" },
-    { id: "seven", val: "7", class: "num" },
-    { id: "eight", val: "8", class: "num" },
-    { id: "nine", val: "9", class: "num" },
-    { id: "add", val: "+", class: "oper" },
-    { id: "subtract", val: "-", class: "oper" },
-    { id: "multiply", val: "*", class: "oper" },
-    { id: "divide", val: "/", class: "oper" },
-    { id: "equals", val: "=", class: "equal" },
-    { id: "decimal", val: ".", class: "num" },
-    { id: "clear", val: "AC", class: "clear" },
-];
