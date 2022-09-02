@@ -1,6 +1,6 @@
 {
-    "homepage": "https://ratchagreea.github.io/calculator",
-    "name": "calculator",
+    "homepage": "https://ratchagreea.github.io/005_calculator",
+    "name": "005_calculator",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
